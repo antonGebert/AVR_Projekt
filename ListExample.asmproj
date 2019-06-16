@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>5.1</ProjectVersion>
+    <ToolchainName>com.Atmel.AVRAssembler</ToolchainName>
+    <ProjectGuid>{c8e85164-c49c-415d-adec-1c7ea39dd71c}</ProjectGuid>
+    <avrdeviceseries>none</avrdeviceseries>
+    <avrdevice>ATmega8</avrdevice>
+    <OutputFileName>$(MSBuildProjectName)</OutputFileName>
+    <OutputFileExtension>.obj</OutputFileExtension>
+    <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
+    <Language>ASSEMBLY</Language>
+    <AssemblyName>ListExample</AssemblyName>
+    <Name>ListExample</Name>
+    <RootNamespace>ListExample</RootNamespace>
+    <EntryFile>$(MSBuildProjectDirectory)\ListExample.asm</EntryFile>
+    <ToolchainFlavour>Native</ToolchainFlavour>
+    <AsfVersion>2.11.1</AsfVersion>
+    <avrtoolinterface />
+    <avrtool>com.atmel.avrdbg.tool.simulator</avrtool>
+    <com_atmel_avrdbg_tool_simulator>
+      <ToolType xmlns="">com.atmel.avrdbg.tool.simulator</ToolType>
+      <ToolName xmlns="">AVR Simulator</ToolName>
+      <ToolNumber xmlns="">
+      </ToolNumber>
+      <Channel xmlns="">
+        <host>127.0.0.1</host>
+        <port>59675</port>
+        <ssl>False</ssl>
+      </Channel>
+    </com_atmel_avrdbg_tool_simulator>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <ToolchainSettings>
+      <AvrAssembler>
+  <avrasm.assembler.general.AdditionalIncludeDirectories>
+    <ListValues>
+      <Value>C:\Users\Anton Gebert\OneDrive\Dokument\YrkesLiv\Library\Section-Programming\Language-Assembler\AVR\Work-Folder\ListExample</Value>
+    </ListValues>
+  </avrasm.assembler.general.AdditionalIncludeDirectories>
+  <avrasm.assembler.general.IncludeFile>($IncludeFile)</avrasm.assembler.general.IncludeFile>
+</AvrAssembler>
+    </ToolchainSettings>
+    <OutputType>Executable</OutputType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <ToolchainSettings>
+      <AvrAssembler>
+  <avrasm.assembler.general.IncludeFile>($IncludeFile)</avrasm.assembler.general.IncludeFile>
+</AvrAssembler>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="ListExample.asm">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Assembler.targets" />
+</Project>
